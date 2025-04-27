@@ -1,0 +1,31 @@
+[project]
+name = "scratchpad"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Kai Siren",email = "coilysiren@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+]
+
+[tool.poetry]
+packages = [{include = "scratchpad", from = "src"}]
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.3.6"
+mypy = "^1.15.0"
+black = "^25.1.0"
+isort = "^6.0.1"
+
+[tool.mypy]
+disable_error_code = ["import-untyped"]
+
+[tool.pylint.messages_control]
+disable = ["C0114", "C0115", "C0116"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
